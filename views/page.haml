@@ -1,0 +1,6 @@
+- if @page.flagged_as?("landing-page")
+  = haml :hero, layout: false
+#content
+  ~ @page.to_html(self)
+  - if @page.flagged_as?("sign-up")
+    = haml :signup_form, layout: false

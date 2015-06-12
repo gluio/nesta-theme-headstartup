@@ -1,0 +1,9 @@
+%form{method: "POST", action: "/sign-up"}
+  .input.text
+    %label(for="email") Email address
+    %input{type:"text", name:"email", placeholder:"your@email.com", value: params[:email]}
+  .actions
+    %button.save(type="submit")
+      %span.spinner
+      Sign up
+

@@ -1,0 +1,324 @@
+@import "bourbon/bourbon";
+@import "base/base";
+@import "neat/neat";
+
+$success-color: #c1fca9;
+$notice-color: #a7d4f9;
+$error-color: #ffabb6;
+$alert-color: #ffe7ab;
+$action-color: #5cd02e;
+$base-background-color: #fafafa;
+$base-accent-color: #262626;
+$max-width: 100%;
+$hero-color: #fff;
+$hero-image: '';
+
+$base-font-size: 22px;
+$base-color: rgba(0, 0, 0, 0.8);
+$heading-font-family: jaf-bernino-sans, 'Open Sans' 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Geneva, Verdana, sans-serif;
+$body-font-family: freight-text-pro, Merriweather, Georgia, Cambria, 'Times New Roman', Times, serif;
+$link-color: rgb(77, 204, 75);
+
+body {
+  background: $base-background-color;
+  margin: 0;
+  padding: 0;
+  font-family: $body-font-family;
+  font-size: $base-font-size;
+  font-weight: normal;
+  color: $base-color;
+}
+
+h1, h2, h3, h4 {
+  font-family: $heading-font-family;
+  font-weight: 700;
+  margin: 1.66em 0 0.83em;
+  a {
+    text-decoration: none;
+    color: $base-color;
+  }
+}
+
+h1, h2 {
+  font-size: $base-font-size * 1.64;
+  line-height: $base-font-size * 1.64 * 1.15;
+  letter-spacing: -2px*(23/32);
+}
+
+h3, h4 {
+  font-size: $base-font-size * 1.46;
+  line-height: $base-font-size * 1.46 * 1.18;
+  letter-spacing: -2*(22/32);
+}
+
+p, ul li, ol li {
+  line-height: $base-font-size * 1.5;
+  font-weight: normal;
+}
+
+ul li, ol li {
+  margin: 0.5em 0;
+}
+
+ul {
+  list-style: disc;
+  ol {
+    list-style: lower-roman;
+    margin-left: $gutter;
+  }
+}
+ol {
+  list-style: decimal;
+}
+
+#container {
+  @include outer-container;
+}
+
+#content {
+  max-width: 700px;
+  padding: 0 $gutter;
+  margin: ($gutter * 3) auto ($gutter * 3);
+}
+
+@import "browser";
+@import "bullets";
+@import "comments";
+@import "device";
+@import "geometric_typography";
+@import "hover_tile";
+
+@import "forms";
+@import "breadcrumb";
+@import "flashes";
+@import "footer";
+@import "hero";
+@import "nav";
+$hero-base-background-color: white;
+$progress-background-color: #9de381;
+$progress-border-color: #62cf33;
+$progress-meter-border-color: darken($progress-background-color, 20%);
+$progress-meter-border: 1px solid darken($progress-meter-border-color, 15%);
+$progress-meter-color: $progress-meter-border-color;
+$progress-background: lighten($progress-background-color, 20%);
+@import "progress_bar";
+
+body.bare {
+  background-color: $base-background-color;
+
+  #container {
+    color: $base-color;
+    display: table;
+    height: 100vh;
+    width: 500px;
+    text-align: center;
+    background-image: none;
+    background-color: $base-background-color;
+
+    header.navigation {
+      display: none;
+    }
+
+    #content {
+      display: table-cell;
+      vertical-align: middle;
+      width: 100%;
+
+      p {
+        margin: 1em auto;
+      }
+
+      .small {
+        font-size: 75%;
+        p {
+          margin: 0;
+          line-height: 1.4em;
+        }
+      }
+    }
+  }
+  footer#footer {
+    display: none;
+  }
+}
+.hero {
+  color: rgba(0, 0, 0, 0.8);
+  display: table;
+  width: 100%;
+  position: relative;
+  height: 28em;
+  height: 95vh;
+  padding: $gutter;
+  margin-bottom: 3em;
+  background-image: none;
+  background-color: $hero-base-background-color;
+  background-size: auto,auto,100% 1000px,100% 1000px;
+
+  .hero-inner {
+    color: rgba(0, 0, 0, 0.8);
+    position: relative;
+    width: 100%;
+    display: table-cell;
+    vertical-align: middle;
+
+    .hero-copy p, .hero-copy h1 {
+      text-align: center;
+      width: 100%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .hero-copy p {
+      font-family: $body-font-family;
+      font-weight: normal;
+      @include media($large-screen) {
+        max-width: 100%;
+      }
+    }
+  }
+
+}
+
+a.call-to-action {
+  font-family: $heading-font-family;
+  font-weight: 700;
+  letter-spacing: -1px*(23/32);
+  color: $hero-color;
+  background: $action-color;
+  padding: 0.75em 1em;
+  border-radius: 5px;
+  margin: 0.75em 0;
+  display: inline-block;
+}
+
+.browser:nth-child(1) .browser-content {
+  background: url(/images/dropbox.homepage.png);
+  background-size: cover;
+  background-position: 0 0, center
+}
+
+.browser:nth-child(2) .browser-content {
+  background: url(/images/contentfocus.homepage.png);
+  background-size: cover;
+  background-position: 50% 0, center
+}
+
+.browser:nth-child(3) .browser-content {
+  background: url(/images/heroku.homepage.png);
+  background-size: cover;
+  background-position: 25% 0, center
+}
+
+$navigation-background-color: #262626;
+$navigation-link-color: rgba(255,255,255,0.7);
+header.navigation {
+  position: fixed;
+  top: 0;
+  height: auto;
+  transition: opacity 0.5s ease, background-color 0.2s linear, ;
+  overflow: hidden;
+  background-color: $navigation-background-color;
+  font-family: ff-meta-web-pro, $heading-font-family;
+  -webkit-font-smoothing: auto;
+  letter-spacing: -1px;
+
+  .sign-up {
+    margin-top: 0.4em;
+  }
+  ul li.nav-link {
+    font-size: 16px;
+    a {
+      transition: color 0.2s linear;
+      color: $navigation-link-color;
+    }
+  }
+
+
+  &.invert {
+    background-color: invert($navigation-background-color);
+    ul li.nav-link a {
+      color: invert($navigation-link-color);
+    }
+  }
+}
+header.navigation.hide {
+  opacity: 0;
+}
+footer.footer {
+  padding-top: 1em;
+  ul li, p {
+    font-family: ff-meta-web-pro, $heading-font-family;
+    letter-spacing: -1px;
+  }
+  ul li {
+    list-style: none;
+    a {
+      white-space: nowrap;
+    }
+  }
+  p {
+    font-size: 75%;
+  }
+}
+
+.bullets {
+  margin: (2 * $gutter) 0;
+
+  .bullet-icon-1, .bullet-icon-2, .bullet-icon-3 {
+    background: $hero-base-background-color;
+  }
+}
+
+.footer {
+  background: #262626;
+  padding-top: 0;
+  .footer-logo {
+    height: 150px;
+    width: 150px;
+    margin: 0 auto 1em;
+    background-size: 150px 150px;
+    background-image: url(/images/logo.full.png);
+    background-repeat: no-repeat;
+    @hidpi {
+      background-image: url(/images/logo.full.2x.png);
+    }
+    img {
+      display: none;
+    }
+  }
+  li {
+    margin-top: 0;
+  }
+  li h3 {
+    margin: 0 0 0.4em;
+  }
+}
+.progress-bar {
+  height: 15px;
+  margin: $gutter 0;
+
+  span.meter {
+    width: 0%;
+    transition: width 30s ease-in;
+  }
+  span.meter.complete {
+    width: 100%;
+  }
+}
+
+h1.logo {
+  height: 150px;
+  width: 150px;
+  margin: 30px auto 0;
+  background-size: 150px 150px;
+  background-image: url(/images/logo.full.png);
+}
+h1.logo span {
+  display: none;
+}
+
+@include hidpi {
+  h1.logo {
+    background-image: url(/images/logo.full.2x.png);
+  }
+}
+

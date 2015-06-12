@@ -1,0 +1,37 @@
+%footer#footer.footer
+  .footer-logo
+    %img{:alt => "ContentFocus.io", :src => "/images/logo.full.png"}/
+  .footer-links
+    %ul
+      %li
+        %h3 Content
+      %li
+        %a{:href => "/pricing"} Plans &amp; Pricing
+      %li
+        %a{:href => "/about"} About
+      %li
+        %a{:href => "/contact"} Contact
+    %ul
+      %li
+        %h3 Follow Us
+      - if facebook_page
+        %li
+          %a{:href => facebook_page} Facebook
+      - if twitter_handle
+        %li
+          %a{:href => "https://twitter.com/#{twitter_handle}"} Twitter
+    %ul
+      %li
+        %h3 Legal
+      %li
+        %a{:href => "/terms"} Terms &amp; Conditions
+      %li
+        %a{:href => "/privacy"} Privacy Policy
+  %hr/
+  %p Disclaimer area, some things are registered trademarks by various entities.
+  %p
+    &copy; Copyright
+    = Time.now.year
+    Glu IO Pty. Ltd. All rights reserved.
+
+

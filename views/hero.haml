@@ -1,0 +1,8 @@
+- if @page.hero_heading
+  .hero
+    .hero-inner
+      .hero-copy
+        %h1.hero-statement= @page.hero_heading
+        - if @page.hero_copy
+          %p= @page.hero_copy
+      %a.call-to-action{href: @page.hero_call_to_action_target}= @page.hero_call_to_action_text
