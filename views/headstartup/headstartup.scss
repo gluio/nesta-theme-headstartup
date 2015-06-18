@@ -6,7 +6,7 @@ body {
   background: $base-background-color;
   margin: 0;
   padding: 0;
-  font-family: $body-font-family;
+  font-family: $base-font-family;
   font-size: $base-font-size;
   font-weight: normal;
   color: $base-font-color;
@@ -150,7 +150,7 @@ body.bare {
       margin-right: auto;
     }
     .hero-copy p {
-      font-family: $body-font-family;
+      font-family: $base-font-family;
       font-weight: normal;
       //@include media($large-screen) {
       //  max-width: 100%;
