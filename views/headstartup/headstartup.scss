@@ -123,42 +123,6 @@ body.bare {
     display: none;
   }
 }
-.hero {
-  color: rgba(0, 0, 0, 0.8);
-  display: table;
-  width: 100%;
-  position: relative;
-  height: 28em;
-  height: 95vh;
-  padding: $gutter;
-  margin-bottom: 3em;
-  background-image: none;
-  background-color: $hero-base-background-color;
-  background-size: auto,auto,100% 1000px,100% 1000px;
-
-  .hero-inner {
-    color: rgba(0, 0, 0, 0.8);
-    position: relative;
-    width: 100%;
-    display: table-cell;
-    vertical-align: middle;
-
-    .hero-copy p, .hero-copy h1 {
-      text-align: center;
-      width: 100%;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    .hero-copy p {
-      font-family: $base-font-family;
-      font-weight: normal;
-      //@include media($large-screen) {
-      //  max-width: 100%;
-      //}
-    }
-  }
-
-}
 
 a.call-to-action {
   font-family: $heading-font-family;
