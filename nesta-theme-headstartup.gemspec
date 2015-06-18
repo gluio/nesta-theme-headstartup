@@ -24,4 +24,5 @@ Gem::Specification.new do |spec|
   spec.add_runtime_dependency "nesta-contentfocus-extensions"
   spec.add_runtime_dependency "bourbon"
   spec.add_runtime_dependency "neat"
+  spec.add_runtime_dependency "mailchimp"
 end

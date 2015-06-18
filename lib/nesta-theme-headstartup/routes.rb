@@ -1,3 +1,4 @@
+require 'mailchimp'
 module Nesta
   module Theme
     module Headstartup
