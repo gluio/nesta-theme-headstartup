@@ -168,9 +168,9 @@ body.bare {
     .hero-copy p {
       font-family: $body-font-family;
       font-weight: normal;
-      @include media($large-screen) {
-        max-width: 100%;
-      }
+      //@include media($large-screen) {
+      //  max-width: 100%;
+      //}
     }
   }
 
