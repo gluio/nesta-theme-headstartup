@@ -1,6 +1,5 @@
 @import "bourbon";
 @import "neat";
-@import "refills/hero";
 
 $success-color: #c1fca9;
 $notice-color: #a7d4f9;
@@ -91,7 +90,7 @@ ol {
 //@import "breadcrumb";
 //@import "flashes";
 //@import "footer";
-//@import "hero";
+@import "hero";
 //@import "nav";
 $hero-base-background-color: white;
 $progress-background-color: #9de381;
