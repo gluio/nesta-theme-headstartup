@@ -69,7 +69,7 @@
         }
         $(window).scroll(invertNavigation)
       });
-  %body{ :class => flagged_classes }
+  %body{ :class => body_class }
     = haml :flash, :layout => false
     #container
       = haml :nav, :layout => false
