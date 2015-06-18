@@ -5,7 +5,7 @@ module Nesta
     def layout
       layout = pre_headstartup_layout
       if landing_page? && layout == "layout"
-        layout = "headstartup_layout"
+        layout = "headstartup/layout"
       end
       layout
     end
@@ -14,7 +14,7 @@ module Nesta
     def template
       template = pre_headstartup_template
       if landing_page? && template == "page"
-        template = "headstartup_page"
+        template = "headstartup/page"
       end
       template
     end
