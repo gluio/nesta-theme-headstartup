@@ -1,6 +1,24 @@
 require 'nesta/models'
 module Nesta
   class Page
+    alias_method :pre_headstartup_layout, :layout
+    def layout
+      layout = pre_headstartup_layout
+      if landing_page? && layout == "layout"
+        layout = "headstartup_layout"
+      end
+      layout
+    end
+
+    alias_method :pre_headstartup_template, :template
+    def template
+      template = pre_headstartup_template
+      if landing_page? && template == "page"
+        template = "headstartup_page"
+      end
+      template
+    end
+
     def landing_page?
       flagged_as?("landing-page")
     end
