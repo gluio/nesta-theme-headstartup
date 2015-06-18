@@ -1,6 +1,5 @@
-@import "bourbon/bourbon";
-@import "base/base";
-@import "neat/neat";
+@import "bourbon";
+@import "neat";
 
 $success-color: #c1fca9;
 $notice-color: #a7d4f9;
@@ -81,12 +80,11 @@ ol {
   margin: ($gutter * 3) auto ($gutter * 3);
 }
 
-@import "browser";
-@import "bullets";
-@import "comments";
-@import "device";
-@import "geometric_typography";
-@import "hover_tile";
+//@import "browser";
+//@import "bullets";
+//@import "comments";
+//@import "device";
+//@import "hover_tile";
 
 @import "forms";
 @import "breadcrumb";
