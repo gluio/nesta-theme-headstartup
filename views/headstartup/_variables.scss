@@ -1,0 +1,55 @@
+// Typography
+$base-font-family: freight-text-pro, Merriweather, Georgia, Cambria, 'Times New Roman', Times, serif;
+$heading-font-family: jaf-bernino-sans, 'Open Sans' 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Geneva, Verdana, sans-serif;
+
+// Font sizes
+$base-font-size: 22px;
+$heading-font-size: $base-font-size * 1.64;
+
+// Line height
+$base-line-height: $base-font-size * 1.5;
+$heading-line-height: $heading-font-size * 1.15;
+
+// Other typesetting hints
+$heading-letter-spacing: -2px*(23/32);
+
+// Other sizes
+$base-spacing: $base-line-height * 1em;
+$small-spacing: $base-spacing / 2;
+$base-z-index: 0;
+
+// Colors
+$success-color: #c1fca9;
+$notice-color: #a7d4f9;
+$error-color: #ffabb6;
+$alert-color: #ffe7ab;
+$base-accent-color: #262626;
+
+// Font colors
+$base-font-color: rgba(0, 0, 0, 0.8);
+$link-color: rgb(77, 204, 75);
+$action-color: #5cd02e;
+
+// Borders
+$base-border-radius: 5px;
+$base-border-color: #c00;
+$base-border: 1px solid $base-border-color;
+
+// Background colors
+$base-background-color: #fafafa;
+$secondary-background-color: tint($base-background-color, 75%);
+
+// Containers
+$max-width: 100%;
+
+// Forms
+$form-box-shadow: inset 0 1px rgba(#000, 0.06);
+$form-box-shadow-focus: $form-box, 0 0 5px adjust-color($action-color, $lightness: -5%, $alpha: -0.3);
+
+// Animations
+$base-duration: 150ms;
+$base-timing: ease;
+
+// Hero
+$hero-color: #fff;
+

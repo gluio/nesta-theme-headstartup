@@ -1,22 +1,6 @@
+@import "variables"
 @import "bourbon";
 @import "neat";
-
-$success-color: #c1fca9;
-$notice-color: #a7d4f9;
-$error-color: #ffabb6;
-$alert-color: #ffe7ab;
-$action-color: #5cd02e;
-$base-background-color: #fafafa;
-$base-accent-color: #262626;
-$max-width: 100%;
-$hero-color: #fff;
-$hero-image: '';
-
-$base-font-size: 22px;
-$base-color: rgba(0, 0, 0, 0.8);
-$heading-font-family: jaf-bernino-sans, 'Open Sans' 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Geneva, Verdana, sans-serif;
-$body-font-family: freight-text-pro, Merriweather, Georgia, Cambria, 'Times New Roman', Times, serif;
-$link-color: rgb(77, 204, 75);
 
 body {
   background: $base-background-color;
@@ -25,7 +9,7 @@ body {
   font-family: $body-font-family;
   font-size: $base-font-size;
   font-weight: normal;
-  color: $base-color;
+  color: $base-font-color;
 }
 
 h1, h2, h3, h4 {
@@ -34,24 +18,24 @@ h1, h2, h3, h4 {
   margin: 1.66em 0 0.83em;
   a {
     text-decoration: none;
-    color: $base-color;
+    color: $base-font-color;
   }
 }
 
 h1, h2 {
-  font-size: $base-font-size * 1.64;
-  line-height: $base-font-size * 1.64 * 1.15;
-  letter-spacing: -2px*(23/32);
+  font-size: $heading-font-size;
+  line-height: $heading-line-height;
+  letter-spacing: $heading-letter-spacing;
 }
 
 h3, h4 {
-  font-size: $base-font-size * 1.46;
-  line-height: $base-font-size * 1.46 * 1.18;
-  letter-spacing: -2*(22/32);
+  font-size: $heading-font-size * 0.89;
+  line-height: $heading-line-height * 0.89;
+  letter-spacing: $heading-letter-spacing;
 }
 
 p, ul li, ol li {
-  line-height: $base-font-size * 1.5;
+  line-height: $base-line-height;
   font-weight: normal;
 }
 
@@ -105,7 +89,7 @@ body.bare {
   background-color: $base-background-color;
 
   #container {
-    color: $base-color;
+    color: $base-font-color;
     display: table;
     height: 100vh;
     width: 500px;
