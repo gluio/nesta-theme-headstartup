@@ -8,7 +8,6 @@ require "nesta-theme-headstartup/routes"
 
 module Nesta
   class App
-    register Sinatra::Flash
     helpers Nesta::Theme::Headstartup::Helpers
     include Nesta::Theme::Headstartup::Routes
   end

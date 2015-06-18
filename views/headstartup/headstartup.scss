@@ -86,12 +86,12 @@ ol {
 //@import "device";
 //@import "hover_tile";
 
-@import "forms";
-@import "breadcrumb";
-@import "flashes";
-@import "footer";
-@import "hero";
-@import "nav";
+//@import "forms";
+//@import "breadcrumb";
+//@import "flashes";
+//@import "footer";
+//@import "hero";
+//@import "nav";
 $hero-base-background-color: white;
 $progress-background-color: #9de381;
 $progress-border-color: #62cf33;
@@ -99,7 +99,7 @@ $progress-meter-border-color: darken($progress-background-color, 20%);
 $progress-meter-border: 1px solid darken($progress-meter-border-color, 15%);
 $progress-meter-color: $progress-meter-border-color;
 $progress-background: lighten($progress-background-color, 20%);
-@import "progress_bar";
+//@import "progress_bar";
 
 body.bare {
   background-color: $base-background-color;
