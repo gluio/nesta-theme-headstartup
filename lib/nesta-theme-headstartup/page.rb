@@ -4,8 +4,8 @@ module Nesta
     alias_method :pre_headstartup_layout, :layout
     def layout
       layout = pre_headstartup_layout
-      if landing_page? && layout == "layout"
-        layout = "headstartup/layout"
+      if landing_page? && layout == layout
+        layout = "headstartup/layout".to_sym
       end
       layout
     end
@@ -13,8 +13,8 @@ module Nesta
     alias_method :pre_headstartup_template, :template
     def template
       template = pre_headstartup_template
-      if landing_page? && template == "page"
-        template = "headstartup/page"
+      if landing_page? && template == :page
+        template = "headstartup/page".to_sym
       end
       template
     end
