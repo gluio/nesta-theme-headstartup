@@ -10,10 +10,10 @@
   $gradient-angle: 10deg !default;
   //$hero-image: 'https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/mountains.png';
 
-  @if $hero-image {
+  @if variable-exists(hero-image) {
     @include background(url($hero-image), linear-gradient($gradient-angle, $hero-background-bottom, $hero-background-top), no-repeat $hero-background-top scroll);
     background-size: auto,auto,100% 1000px,100% 1000px;
-  } @else if $hero-background-top && $hero-background-bottom {
+  } @else if variable-exists(hero-background-top) && variable-exists(hero-background-bottom) {
     @include background(linear-gradient($gradient-angle, $hero-background-bottom, $hero-background-top), no-repeat $hero-background-top scroll);
     background-size: auto,auto,100% 1000px,100% 1000px;
   } @else {
