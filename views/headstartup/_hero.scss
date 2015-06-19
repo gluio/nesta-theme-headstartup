@@ -79,8 +79,8 @@
       }
     }
     a.call-to-action {
-      $base-background-color: $action-color;
-      $hover-button-color: lighten($base-background-color, 10%);
+      $base-button-color: $action-color;
+      $hover-button-color: lighten($base-button-color, 10%);
       @extend %button;
       font-family: $heading-font-family;
       font-weight: 700;
