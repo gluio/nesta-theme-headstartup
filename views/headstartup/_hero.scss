@@ -4,11 +4,8 @@
   $action-color: #477DCA !default;
   $large-screen: em(860) !default;
   $hero-background-color: $base-background-color !default;
-  //$hero-background-top: #7F99BE !default;
-  //$hero-background-bottom: #20392B !default;
   $hero-color: $base-font-color !default;
   $gradient-angle: 10deg !default;
-  //$hero-image: 'https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/mountains.png';
 
   @if variable-exists(hero-image) {
     @include background(url($hero-image), linear-gradient($gradient-angle, $hero-background-bottom, $hero-background-top), no-repeat $hero-background-top scroll);
