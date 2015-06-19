@@ -5,7 +5,7 @@
   $footer-disclaimer-color: transparentize($footer-color, .6) !default;
 
   background: $footer-background;
-  padding: $base-spacing $gutter;
+  padding: $base-spacing*2 0;
   width: 100%;
 
   .footer-logo {
