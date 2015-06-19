@@ -46,6 +46,7 @@
 
   li a {
     color: $footer-link-color;
+    text-decoration: none;
 
     &:hover {
       color: transparentize($footer-color, 0);
