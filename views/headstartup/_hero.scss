@@ -1,19 +1,36 @@
+
 .hero {
   $base-border-radius: 3px !default;
   $action-color: #477DCA !default;
   $large-screen: em(860) !default;
-  $hero-background-top: #7F99BE;
-  $hero-background-bottom: #20392B;
-  $hero-color: white;
-  $gradient-angle: 10deg;
-  $hero-image: 'https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/mountains.png';
+  $hero-background-color: $base-background-color !default;
+  //$hero-background-top: #7F99BE !default;
+  //$hero-background-bottom: #20392B !default;
+  $hero-color: $base-font-color !default;
+  $gradient-angle: 10deg !default;
+  //$hero-image: 'https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/mountains.png';
 
-  @include background(url($hero-image), linear-gradient($gradient-angle, $hero-background-bottom, $hero-background-top), no-repeat $hero-background-top scroll);
-  background-color: #324766;
+  @if $hero-image {
+    @include background(url($hero-image), linear-gradient($gradient-angle, $hero-background-bottom, $hero-background-top), no-repeat $hero-background-top scroll);
+    background-size: auto,auto,100% 1000px,100% 1000px;
+  } @else if $hero-background-top && $hero-background-bottom {
+    @include background(linear-gradient($gradient-angle, $hero-background-bottom, $hero-background-top), no-repeat $hero-background-top scroll);
+    background-size: auto,auto,100% 1000px,100% 1000px;
+  } @else {
+    background-color: $hero-background-color;
+  }
   background-position: top;
   background-repeat: no-repeat;
   background-size: cover;
-  padding-bottom: 3em;
+  padding-bottom: 4em;
+  color: $hero-color;
+  display: table;
+  width: 100%;
+  position: relative;
+  height: 28em;
+  height: 95vh;
+  padding: $gutter;
+  margin-bottom: 3em;
 
   .hero-logo img {
     height: 4em;
@@ -55,15 +72,6 @@
 }
 
 .hero {
-  $hero-background-top: #7F99BE;
-  $hero-background-bottom: #20392B;
-  $hero-color: white;
-  $gradient-angle: 10deg;
-
-  background-repeat: no-repeat;
-  background-position: top;
-  background-size: cover;
-  padding-bottom: 4em;
 
   .hero-logo img {
     height: 3em;
@@ -77,49 +85,6 @@
     margin: auto;
     text-align: center;
     color: $hero-color;
-
-    .hero-copy {
-      text-align: center;
-
-      h1 {
-        font-size: 1.6em;
-        margin-bottom: .5em;
-
-        @include media($large-screen) {
-          font-size: 1.8em;
-        }
-      }
-
-      p {
-        margin: auto;
-        margin-bottom: 3em;
-        font-weight: 200;
-        line-height: 1.4em;
-
-        @include media($large-screen) {
-          font-size: 1.1em;
-          max-width: 40%;
-        }
-      }
-    }
-  }
-}
-
-.hero {
-  color: rgba(0, 0, 0, 0.8);
-  display: table;
-  width: 100%;
-  position: relative;
-  height: 28em;
-  height: 95vh;
-  padding: $gutter;
-  margin-bottom: 3em;
-  background-image: none;
-  background-color: $hero-base-background-color;
-  background-size: auto,auto,100% 1000px,100% 1000px;
-
-  .hero-inner {
-    color: rgba(0, 0, 0, 0.8);
     position: relative;
     width: 100%;
     display: table-cell;
@@ -134,9 +99,35 @@
     .hero-copy p {
       font-family: $base-font-family;
       font-weight: normal;
-      //@include media($large-screen) {
-      //  max-width: 100%;
-      //}
+
+    .hero-copy {
+      text-align: center;
+
+      h1 {
+        font-size: 1.6em;
+        margin-bottom: .5em;
+        @include media($large-screen) {
+          font-size: 1.8em;
+        }
+      }
+
+      p {
+        margin: auto;
+        margin-bottom: 3em;
+        font-weight: 200;
+        line-height: 1.4em;
+        @include media($large-screen) {
+          font-size: 1.1em;
+          max-width: 40%;
+        }
+      }
+    }
+  }
+}
+
+.hero {
+  .hero-inner {
+
     }
   }
 
