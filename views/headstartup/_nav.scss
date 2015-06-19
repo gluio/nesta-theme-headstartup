@@ -338,11 +338,31 @@ header.navigation {
     }
   }
 
+
+   a.button {
+     @extend %button;
+     transition: background-color 0.2s linear;
+     font-size: $navigation-font-size;
+     font-family: $heading-font-family;
+     font-weight: 700;
+     letter-spacing: $heading-letter-spacing;
+     color: $navigation-background-color;
+     background: $navigation-color;
+     padding: 0.75em 1em;
+     border-radius: 5px;
+     margin: 0.75em 0;
+     display: inline-block;
+     text-decoration: none;
+   }
   &.invert {
     background-color: invert($navigation-background-color);
     border-bottom: 1px solid lighten(invert($navigation-background-color), 10);
     ul li.nav-link a {
       color: invert($navigation-color);
+    }
+    a.button {
+     background-color: $navigation-background-color;
+     color: $navigation-color;
     }
   }
   &.hide {
@@ -352,18 +372,4 @@ header.navigation {
   body.bare & {
     display: none;
   }
-
- a.call-to-action {
-   @extend %button;
-   font-family: $heading-font-family;
-   font-weight: 700;
-   letter-spacing: $heading-letter-spacing;
-   color: $navigation-color;
-   background: $action-color;
-   padding: 0.75em 1em;
-   border-radius: 5px;
-   margin: 0.75em 0;
-   display: inline-block;
-   text-decoration: none;
- }
 }
