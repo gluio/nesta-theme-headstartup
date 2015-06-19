@@ -79,7 +79,7 @@
       }
     }
     a.call-to-action {
-      @extend .button;
+      @extend button;
       font-family: $heading-font-family;
       font-weight: 700;
       letter-spacing: $heading-letter-spacing;
