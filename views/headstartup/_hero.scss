@@ -1,3 +1,4 @@
+@import "bitters/buttons"
 
 .hero {
   $base-border-radius: 3px !default;
@@ -117,13 +118,22 @@
         }
       }
     }
-  }
-}
-
-.hero {
-  .hero-inner {
-
+    a.call-to-action {
+      @extend .button;
+      font-family: $heading-font-family;
+      font-weight: 700;
+      letter-spacing: $heading-letter-spacing;
+      @if variable-exists(hero-background-top) {
+        color: $hero-background-top;
+      } @else {
+        color: $hero-background-color;
+      }
+      background: $action-color;
+      padding: 0.75em 1em;
+      border-radius: 5px;
+      margin: 0.75em 0;
+      display: inline-block;
+      text-decoration: none;
     }
   }
-
 }

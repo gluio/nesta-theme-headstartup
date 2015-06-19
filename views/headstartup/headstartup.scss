@@ -124,18 +124,6 @@ body.bare {
   }
 }
 
-a.call-to-action {
-  font-family: $heading-font-family;
-  font-weight: 700;
-  letter-spacing: -1px*(23/32);
-  color: $hero-color;
-  background: $action-color;
-  padding: 0.75em 1em;
-  border-radius: 5px;
-  margin: 0.75em 0;
-  display: inline-block;
-}
-
 .browser:nth-child(1) .browser-content {
   background: url(/images/dropbox.homepage.png);
   background-size: cover;
