@@ -11,7 +11,7 @@ form {
   width: 40em;
   max-width: 100%;
   font-size: 85%;
-  margin: $gutter 0;
+  margin: $base-spacing 0;
 
   .input {
     display: block;
@@ -73,7 +73,7 @@ form {
   }
   .actions {
     text-align: left;
-    margin-top: $gutter/2;
+    margin-top: $base-spacing/2;
 
     button.save {
       background: $action-color;
