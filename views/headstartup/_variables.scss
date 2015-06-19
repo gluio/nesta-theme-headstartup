@@ -3,6 +3,7 @@
 // Typography
 $base-font-family: freight-text-pro, Merriweather, Georgia, Cambria, 'Times New Roman', Times, serif;
 $heading-font-family: jaf-bernino-sans, 'Open Sans' 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Geneva, Verdana, sans-serif;
+$navigation-font-family: ff-meta-web-pro, $heading-font-family;
 
 // Font sizes
 $base-font-size: 22px;
@@ -59,6 +60,10 @@ $form-box-shadow-focus: $form-box-shadow, 0 0 5px adjust-color($action-color, $l
 // Animations
 $base-duration: 150ms;
 $base-timing: ease;
+
+// Navigation
+$navigation-background-color: #262626;
+$navigation-color: rgba(255,255,255,0.7);
 
 // Hero
 $hero-color: $base-font-color;

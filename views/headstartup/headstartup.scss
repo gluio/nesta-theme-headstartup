@@ -75,13 +75,7 @@ ol {
 //@import "flashes";
 //@import "footer";
 @import "hero";
-//@import "nav";
-$progress-background-color: #9de381;
-$progress-border-color: #62cf33;
-$progress-meter-border-color: darken($progress-background-color, 20%);
-$progress-meter-border: 1px solid darken($progress-meter-border-color, 15%);
-$progress-meter-color: $progress-meter-border-color;
-$progress-background: lighten($progress-background-color, 20%);
+@import "nav";
 //@import "progress_bar";
 
 body.bare {
@@ -95,10 +89,6 @@ body.bare {
     text-align: center;
     background-image: none;
     background-color: $base-background-color;
-
-    header.navigation {
-      display: none;
-    }
 
     #content {
       display: table-cell;
@@ -141,41 +131,6 @@ body.bare {
 //  background-position: 25% 0, center
 //}
 
-$navigation-background-color: #262626;
-$navigation-link-color: rgba(255,255,255,0.7);
-header.navigation {
-  position: fixed;
-  top: 0;
-  height: auto;
-  transition: opacity 0.5s ease, background-color 0.2s linear, ;
-  overflow: hidden;
-  background-color: $navigation-background-color;
-  font-family: ff-meta-web-pro, $heading-font-family;
-  -webkit-font-smoothing: auto;
-  letter-spacing: -1px;
-
-  .sign-up {
-    margin-top: 0.4em;
-  }
-  ul li.nav-link {
-    font-size: 16px;
-    a {
-      transition: color 0.2s linear;
-      color: $navigation-link-color;
-    }
-  }
-
-
-  &.invert {
-    background-color: invert($navigation-background-color);
-    ul li.nav-link a {
-      color: invert($navigation-link-color);
-    }
-  }
-}
-header.navigation.hide {
-  opacity: 0;
-}
 footer.footer {
   padding-top: 1em;
   ul li, p {
