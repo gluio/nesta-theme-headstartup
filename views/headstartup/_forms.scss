@@ -16,7 +16,7 @@ form {
     text-align: left;
 
     label {
-      width: 50%;
+      width: 45%;
       display: inline-block;
       text-align: right;
       vertical-align: middle;
@@ -28,7 +28,7 @@ form {
       margin: 0;
       display: inline-block;
       vertical-align: middle;
-      width: 10em;
+      width: 50%;
     }
 
     &.checkbox {
@@ -53,7 +53,7 @@ form {
     display: inline-block;
   }
   input[type="checkbox"] {
-    margin-left: 50%;
+    margin-left: 45%;
   }
   .actions {
     body.bare & {
@@ -63,7 +63,7 @@ form {
   .actions {
     text-align: left;
     margin-top: $base-spacing/2;
-    margin-left: 50%;
+    margin-left: 45%;
     padding-left: $base-spacing/2;
 
     button.save {
