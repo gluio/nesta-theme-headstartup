@@ -1,11 +1,5 @@
-@include keyframes(spin) {
-  from {
-    @include transform(rotate(0deg));
-  }
-  to {
-    @include transform(rotate(360deg));
-  }
-}
+@import "headstartup/animations";
+@import "bitters/forms";
 
 form {
   width: 40em;
