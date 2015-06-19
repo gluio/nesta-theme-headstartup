@@ -26,6 +26,8 @@ $notice-color: #a7d4f9;
 $error-color: #ffabb6;
 $alert-color: #ffe7ab;
 $base-accent-color: #262626;
+$base-button-color: $action-color;
+$hover-button-color: lighten($base-button-color, 10%);
 
 // Font colors
 $base-font-color: rgba(0, 0, 0, 0.8);
