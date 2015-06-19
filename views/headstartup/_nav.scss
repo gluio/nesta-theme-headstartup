@@ -353,6 +353,14 @@ header.navigation {
      margin: 0.75em 0;
      display: inline-block;
      text-decoration: none;
+     &:focus, &:hover, &:active {
+       color: lighten($navigation-background-color, 40%);
+       box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3), 0 1px 5px lighten($navigation-background-color, 10%);
+     }
+     &:active {
+       background: darken($navigation-background-color, 10%);
+       cursor:progress;
+     }
    }
   &.invert {
     background-color: invert($navigation-background-color);
@@ -361,13 +369,21 @@ header.navigation {
       color: invert($navigation-color);
     }
     a.button {
-     background-color: $navigation-background-color;
-     color: $navigation-color;
+      background-color: $navigation-background-color;
+      color: $navigation-color;
+      &:focus, &:hover, &:active {
+        color: lighten($navigation-color, 40%);
+        box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3), 0 1px 5px lighten($navigation-color, 10%);
+      }
+      &:active {
+        background: darken($navigation-color, 10%);
+        cursor:progress;
+      }
     }
   }
   &.hide {
     opacity: 0;
-  }
+
 
   body.bare & {
     display: none;
