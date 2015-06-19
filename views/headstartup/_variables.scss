@@ -64,3 +64,10 @@ $base-timing: ease;
 $hero-color: $base-font-color;
 $hero-base-background-color: #fff;
 
+// Progress bar
+$progress-background-color: #9de381;
+$progress-border-color: #62cf33;
+$progress-meter-border-color: darken($progress-background-color, 20%);
+$progress-meter-border: 1px solid darken($progress-meter-border-color, 15%);
+$progress-meter-color: $progress-meter-border-color;
+$progress-background: lighten($progress-background-color, 20%);

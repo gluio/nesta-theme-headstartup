@@ -76,7 +76,6 @@ ol {
 //@import "footer";
 @import "hero";
 //@import "nav";
-$hero-base-background-color: white;
 $progress-background-color: #9de381;
 $progress-border-color: #62cf33;
 $progress-meter-border-color: darken($progress-background-color, 20%);
@@ -124,23 +123,23 @@ body.bare {
   }
 }
 
-.browser:nth-child(1) .browser-content {
-  background: url(/images/dropbox.homepage.png);
-  background-size: cover;
-  background-position: 0 0, center
-}
-
-.browser:nth-child(2) .browser-content {
-  background: url(/images/contentfocus.homepage.png);
-  background-size: cover;
-  background-position: 50% 0, center
-}
-
-.browser:nth-child(3) .browser-content {
-  background: url(/images/heroku.homepage.png);
-  background-size: cover;
-  background-position: 25% 0, center
-}
+//.browser:nth-child(1) .browser-content {
+//  background: url(/images/dropbox.homepage.png);
+//  background-size: cover;
+//  background-position: 0 0, center
+//}
+//
+//.browser:nth-child(2) .browser-content {
+//  background: url(/images/contentfocus.homepage.png);
+//  background-size: cover;
+//  background-position: 50% 0, center
+//}
+//
+//.browser:nth-child(3) .browser-content {
+//  background: url(/images/heroku.homepage.png);
+//  background-size: cover;
+//  background-position: 25% 0, center
+//}
 
 $navigation-background-color: #262626;
 $navigation-link-color: rgba(255,255,255,0.7);
