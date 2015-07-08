@@ -10,13 +10,13 @@
     %link{ :href => "/css/master.css", :media => "screen", :rel => "stylesheet", :type => "text/css" }
     - local_stylesheet_link_tag('local')
     - if ENV["TYPEKIT_KIT_ID"]
-      %script{ :type => "text/javascript", :src => "http://use.typekit.com/#{ENV["TYPEKIT_KIT_ID"]}.js" }
+      %script{ :type => "text/javascript", :src => "//use.typekit.com/#{ENV["TYPEKIT_KIT_ID"]}.js" }
       :javascript
         try{Typekit.load();}catch(e){}
     - else
-      %link(href="http://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet" type="text/css")
-      %link(href="http://fonts.googleapis.com/css?family=Merriweather:300,400,700,300italic,400italic" rel="stylesheet" type="text/css")
-    %script{ src: "https://code.jquery.com/jquery-2.1.3.min.js" }
+      %link(href="//fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet" type="text/css")
+      %link(href="//fonts.googleapis.com/css?family=Merriweather:300,400,700,300italic,400italic" rel="stylesheet" type="text/css")
+    %script{ src: "//code.jquery.com/jquery-2.1.3.min.js" }
     = haml :analytics, :layout => false
     :javascript
       $(document).ready(function() {
