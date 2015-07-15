@@ -224,7 +224,7 @@ ul.benefits {
       margin-bottom: 0.2rem;
     }
     p img {
-      @include span-columns(3);
+      @include span-columns(4);
       &:last-child {
         margin-right: 2.35765%;
       }
@@ -232,8 +232,8 @@ ul.benefits {
 
     &:nth-child(odd) {
       h2 {
-        @include span-columns(9);
-        @include shift(3);
+        @include span-columns(8);
+        @include shift(4);
       }
       p img {
         float: left;
