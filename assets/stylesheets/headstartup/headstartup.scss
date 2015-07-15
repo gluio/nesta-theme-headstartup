@@ -224,7 +224,7 @@ ul.benefits {
       margin-top: 0;
       margin-bottom: 0.2rem;
     }
-    p img {
+    img {
       @include span-columns(4);
       &:last-child {
         margin-right: 2.35765%;
@@ -236,12 +236,12 @@ ul.benefits {
         @include span-columns(8);
         @include shift(4);
       }
-      p img {
+      img {
         float: left;
       }
     }
     &:nth-child(even) {
-      p img {
+      img {
         float: right;
       }
     }
