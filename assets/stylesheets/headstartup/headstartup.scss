@@ -59,9 +59,6 @@ ol {
 }
 
 #content {
-  max-width: 700px;
-  padding: 0 $gutter;
-  margin: ($gutter * 3) auto ($gutter * 3);
 }
 
 //@import "browser";
@@ -132,6 +129,7 @@ body.bare {
 //}
 
 footer.footer {
+  clear: both;
   padding-top: 1em;
   ul li, p {
     font-family: ff-meta-web-pro, $heading-font-family;
@@ -210,3 +208,41 @@ h1.logo span {
   }
 }
 
+ul.benefits {
+  list-style: none;
+  margin-top: $base-spacing;
+  margin-bottom: $base-spacing;
+
+  li {
+    margin-top: $base-spacing;
+    margin-bottom: $base-spacing;
+    position: relative;
+    float: left;
+
+    h2, p {
+      margin-top: 0;
+      margin-bottom: 0.2rem;
+    }
+    p img {
+      @include span-columns(3);
+      &:last-child {
+        margin-right: 2.35765%;
+      }
+    }
+
+    &:nth-child(odd) {
+      h2 {
+        @include span-columns(9);
+        @include shift(3);
+      }
+      p img {
+        float: left;
+      }
+    }
+    &:nth-child(even) {
+      p img {
+        float: right;
+      }
+    }
+  }
+}
