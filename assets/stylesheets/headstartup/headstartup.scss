@@ -224,6 +224,9 @@ ul.benefits {
       margin-top: 0;
       margin-bottom: 0.2rem;
     }
+    p {
+      @include span-columns(8);
+    }
     img {
       @include span-columns(4);
       &:last-child {
@@ -232,16 +235,12 @@ ul.benefits {
     }
 
     &:nth-child(odd) {
-      h2 {
-        @include span-columns(8);
-        @include shift(4);
-      }
-      img {
+      img, p {
         float: left;
       }
     }
     &:nth-child(even) {
-      img {
+      img, p {
         float: right;
       }
     }
