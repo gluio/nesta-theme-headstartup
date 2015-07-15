@@ -209,6 +209,7 @@ h1.logo span {
 }
 
 ul.benefits {
+  @include clearfix;
   list-style: none;
   margin-top: $base-spacing;
   margin-bottom: $base-spacing;
