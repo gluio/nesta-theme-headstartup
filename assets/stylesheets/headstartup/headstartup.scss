@@ -60,9 +60,6 @@ ol {
 #content {
   @include outer-container;
   p {
-    max-width: 35em;
-    margin-left: auto;
-    margin-right: auto;
     text-align: center;
     font-size: 1.5em;
     line-height: 1.5em;
@@ -221,21 +218,21 @@ ul.benefits {
   list-style: none;
   margin-top: $base-spacing;
   margin-bottom: $base-spacing;
+  padding: 0;
 
   li {
     margin-top: $base-spacing;
     margin-bottom: $base-spacing;
-    position: relative;
-    float: left;
+    text-align: center;
 
     h2, p {
       margin-top: 0;
       margin-bottom: 0.2rem;
     }
-    p {
+    .description {
       @include span-columns(8);
     }
-    img {
+    .example {
       @include span-columns(4);
       &:last-child {
         margin-right: 2.35765%;
@@ -243,14 +240,8 @@ ul.benefits {
     }
 
     &:nth-child(odd) {
-      img, p {
-        float: left;
-      }
     }
     &:nth-child(even) {
-      img, p {
-        float: right;
-      }
     }
   }
 }
