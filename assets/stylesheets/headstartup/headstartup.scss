@@ -231,10 +231,10 @@ ul.benefits {
       margin-bottom: 0.2rem;
     }
     .description {
-      @include span-columns(8);
+      @include span-columns(6);
     }
     .example {
-      @include span-columns(4);
+      @include span-columns(6);
       &:last-child {
         margin-right: 2.35765%;
       }
