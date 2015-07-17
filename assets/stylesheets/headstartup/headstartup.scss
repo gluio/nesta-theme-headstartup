@@ -59,6 +59,14 @@ ol {
 }
 
 #content {
+  p {
+    max-width: 35em;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    font-size: 1.5em;
+    line-height: 1.5em;
+  }
 }
 
 //@import "browser";
