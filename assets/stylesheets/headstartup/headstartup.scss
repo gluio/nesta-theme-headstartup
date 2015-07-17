@@ -224,6 +224,7 @@ ul.benefits {
     margin-top: $base-spacing;
     margin-bottom: $base-spacing;
     text-align: center;
+    clear: both;
 
     h2, p {
       margin-top: 0;
@@ -242,6 +243,9 @@ ul.benefits {
     &:nth-child(odd) {
     }
     &:nth-child(even) {
+      .example {
+        float: right;
+      }
     }
   }
 }
