@@ -55,10 +55,10 @@ ol {
 }
 
 #container {
-  @include outer-container;
 }
 
 #content {
+  @include outer-container;
   p {
     max-width: 35em;
     margin-left: auto;
