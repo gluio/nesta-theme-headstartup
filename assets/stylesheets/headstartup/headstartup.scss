@@ -271,3 +271,37 @@ a.call-to-action {
     cursor:progress;
   }
 }
+
+blockquote.testimonial {
+  position: relative;
+  font-weight: 400;
+  font-style: italic;
+  font-family: $base-font-family;
+  margin: 1.5em 0 1em;
+
+  &::before {
+    content: "\201C";
+    font-size: 300%;
+    position: absolute;
+    font-family: Georgia, serif;
+  }
+
+  p {
+    margin-bottom: 0;
+    font-weight: 400;
+    font-style: italic;
+    font-family: $base-font-family;
+  }
+
+  cite {
+    display: block;
+    font-size: 85%;
+    color: lighten($base-font-color, 15%);
+    a {
+      color: lighten($base-font-color, 15%);
+    }
+    &:before {
+      content: "\2014";
+    }
+  }
+}
