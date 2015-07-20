@@ -50,7 +50,7 @@
     vertical-align: middle;
 
     @include media($mobile) {
-      padding: 1em 0 3em;
+      padding: 0 0 3em;
     }
 
     .hero-copy p, .hero-copy h1 {

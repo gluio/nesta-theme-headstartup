@@ -61,6 +61,7 @@ ol {
   @include outer-container;
   @include media($mobile) {
     @include outer-container($mobile-width);
+    padding-top: 1em;
     padding-left: 22px;
     padding-right: 22px;
   }
