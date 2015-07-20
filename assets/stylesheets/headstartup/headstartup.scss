@@ -1,3 +1,4 @@
+$visual-grid: true;
 @import "bourbon/bourbon";
 @import "neat/neat";
 @import "variables";
@@ -59,6 +60,18 @@ ol {
 
 #content {
   @include outer-container;
+  @include media($mobile) {
+    @include outer-container($mobile-width);
+  }
+  @include media($medium-screen) {
+    @include outer-container($medium-screen-width);
+  }
+  @include media($tablet) {
+    @include outer-container($tablet-width);
+  }
+  @include media($large-screen) {
+    @include outer-container($large-screen-width);
+  }
   p {
     text-align: center;
     font-size: 1.5em;
