@@ -229,15 +229,17 @@ h1.logo span {
 ul.benefits {
   @include clearfix;
   list-style: none;
-  margin-top: $base-spacing;
-  margin-bottom: $base-spacing;
+  margin-top: $base-spacing*3;
+  margin-bottom: $base-spacing*3;
   padding: 0;
 
   li {
-    margin-top: $base-spacing;
-    margin-bottom: $base-spacing;
+    margin-top: $base-spacing*2;
+    margin-bottom: $base-spacing*2;
     text-align: center;
     clear: both;
+    display: table;
+    width: 100%;
 
     h2, p {
       margin-top: 0;
@@ -245,19 +247,18 @@ ul.benefits {
     }
     .description {
       @include span-columns(6);
+      float: none;
+      display: table-cell;
+      vertical-align: middle;
     }
     .example {
       @include span-columns(6);
-      &:last-child {
-        margin-right: 2.35765%;
-      }
-    }
-
-    &:nth-child(odd) {
-    }
-    &:nth-child(even) {
-      .example {
-        float: right;
+      float: none;
+      display: table-cell;
+      display: table-cell;
+      vertical-align: middle;
+      img {
+        max-width: 100%;
       }
     }
   }
@@ -290,7 +291,8 @@ blockquote.testimonial {
   font-weight: 400;
   font-style: italic;
   font-family: $base-font-family;
-  margin: 1.5em 0 1em;
+  margin-top: $base-spacing*3;
+  margin-bottom: $base-spacing*3;
 
   &::before {
     content: "\201C";
@@ -308,8 +310,8 @@ blockquote.testimonial {
 
   cite {
     display: block;
-    font-size: 85%;
-    color: lighten($base-font-color, 15%);
+    font-size: 75%;
+    color: lighten($base-font-color, 25%);
     img {
       border-radius: 50%;
       vertical-align: middle;
@@ -320,7 +322,7 @@ blockquote.testimonial {
       padding: 2px;
     }
     a {
-      color: lighten($base-font-color, 15%);
+      color: lighten($base-font-color, 25%);
     }
     &:before {
       content: "\2014";
