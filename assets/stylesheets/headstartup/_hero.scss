@@ -20,7 +20,6 @@
   background-position: top;
   background-repeat: no-repeat;
   background-size: cover;
-  padding-bottom: 4em;
   color: $hero-color;
   display: table;
   width: 100%;
@@ -29,6 +28,10 @@
   height: 95vh;
   padding: $gutter;
   margin-bottom: 3em;
+
+  @include media($mobile) {
+    padding: 0 22px;
+  }
 
   .hero-logo img {
     height: 3em;
@@ -47,6 +50,10 @@
     display: table-cell;
     vertical-align: middle;
 
+    @include media($mobile) {
+      padding: 3em 0;
+    }
+
     .hero-copy p, .hero-copy h1 {
       text-align: center;
       width: 100%;
@@ -64,6 +71,9 @@
       h1 {
         font-size: 1.6em;
         margin-bottom: .5em;
+        @include media($mobile) {
+          font-size: $base-font-size * 2.5;
+        }
         @include media($large-screen) {
           font-size: 1.8em;
         }
@@ -73,6 +83,9 @@
         margin: 0 auto 3em auto;
         font-weight: 200;
         line-height: 1.4em;
+        @include media($mobile) {
+          font-size: $base-font-size * 2;
+        }
         @include media($large-screen) {
           font-size: 1.1em;
         }
