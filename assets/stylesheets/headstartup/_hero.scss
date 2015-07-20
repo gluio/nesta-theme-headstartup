@@ -3,7 +3,6 @@
 .hero {
   $base-border-radius: 3px !default;
   $action-color: #477DCA !default;
-  $large-screen: em(860) !default;
   $hero-background-color: $base-background-color !default;
   $hero-color: $base-font-color !default;
   $gradient-angle: 10deg !default;
@@ -73,9 +72,7 @@
         margin-bottom: .5em;
         @include media($mobile) {
           font-size: $base-font-size * 2.5;
-        }
-        @include media($large-screen) {
-          font-size: 1.8em;
+          line-height: 1.4em;
         }
       }
 
@@ -85,9 +82,7 @@
         line-height: 1.4em;
         @include media($mobile) {
           font-size: $base-font-size * 2;
-        }
-        @include media($large-screen) {
-          font-size: 1.1em;
+          line-height: 1.2em;
         }
       }
     }
