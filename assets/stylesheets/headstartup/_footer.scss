@@ -21,7 +21,7 @@
     @include clearfix;
     margin-bottom: $base-spacing;
 
-    @include media($medium-screen) {
+    @include media($large-screen) {
       @include shift(3);
     }
   }
@@ -31,9 +31,12 @@
     padding: 0;
 
     @include media($medium-screen) {
-      @include span-columns(3);
+      @include span-columns(4);
       @include omega(3n);
       @include clearfix;
+    }
+    @include media($large-screen) {
+      @include span-columns(3);
     }
   }
 
@@ -41,6 +44,9 @@
     text-align: center;
 
     @include media($medium-screen) {
+      text-align: center;
+    }
+    @include media($large-screen) {
       text-align: left;
     }
   }

@@ -51,11 +51,11 @@ $max-width: 100%;
 
 // Screens
 $medium-screen-width: 600px;
-$medium-screen: new-breakpoint(min-width $medium-screen-width 8);
+$medium-screen: new-breakpoint(min-width $medium-screen-width 12);
 $large-screen-width: 900px;
 $large-screen: new-breakpoint(min-width $large-screen-width 12);
 $tablet-width: 768px;
-$tablet: new-breakpoint(max-width $tablet-width 8);
+$tablet: new-breakpoint(max-width $tablet-width 12);
 $mobile-width: 480px;
 $mobile: new-breakpoint(max-width $mobile-width 4);
 
