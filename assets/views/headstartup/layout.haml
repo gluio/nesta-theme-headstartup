@@ -56,6 +56,17 @@
         }
       }
       $(document).ready(function() {
+        var menuToggle = $('#js-mobile-menu').unbind();
+        $('#navigation-menu').removeClass("show");
+
+        menuToggle.on('click', function(e) {
+          e.preventDefault();
+          $('#navigation-menu').slideToggle(function(){
+            if($('#navigation-menu').is(':hidden')) {
+              $('#navigation-menu').removeAttr('style');
+            }
+          });
+        });
         if ( $("body.landing-page").length > 0 ) {
           var element = $($("header.navigation")[0]);
           element.addClass('hide');

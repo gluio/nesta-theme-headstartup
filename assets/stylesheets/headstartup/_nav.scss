@@ -20,7 +20,7 @@ header.navigation {
   font-size: $navigation-font-size;
   background-color: $navigation-background-color;
   border-bottom: 1px solid darken($navigation-background-color, 10);
-  height: $navigation-height;
+  height: auto;
   width: 100%;
   z-index: 999;
   position: fixed;
@@ -257,13 +257,14 @@ header.navigation {
 
   .navigation-tools {
     @include clearfix;
-    display: block;
+    display: none;
     padding-right: $navigation-padding;
     padding-left: $navigation-padding/2;
     clear: both;
     background: #505050;
 
     @include media($large-screen) {
+      display: block;
       background: transparent;
       float: right;
       clear: none;
@@ -380,6 +381,9 @@ header.navigation {
         background: darken($navigation-color, 10%);
         cursor:progress;
       }
+    }
+    .navigation-menu-button {
+      color: invert($navigation-color);
     }
   }
   &.hide {
