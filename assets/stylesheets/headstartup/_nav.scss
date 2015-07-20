@@ -366,8 +366,11 @@ header.navigation {
   &.invert {
     background-color: invert($navigation-background-color);
     border-bottom: 1px solid lighten(invert($navigation-background-color), 10);
-    ul li.nav-link a {
-      color: invert($navigation-color);
+    ul li.nav-link {
+      background-color: invert($navigation-background-color);
+      a {
+        color: invert($navigation-color);
+      }
     }
     a.button {
       background-color: $navigation-background-color;
