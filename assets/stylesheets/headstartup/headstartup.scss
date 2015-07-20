@@ -232,6 +232,8 @@ h1.logo span {
     margin-top: $base-spacing*3;
     margin-bottom: $base-spacing*3;
     padding: 0;
+    border-top: 1px solid darken($base-background-color, 8%);
+    border-bottom: 1px solid darken($base-background-color, 8%);
 
     li {
       margin-top: $base-spacing*2;
@@ -247,6 +249,8 @@ h1.logo span {
   }
 
   ol.how {
+    border-top: 1px solid darken($base-background-color, 8%);
+    border-bottom: 1px solid darken($base-background-color, 8%);
   }
 
   ul.how, ul.features {
