@@ -226,7 +226,7 @@ h1.logo span {
   }
 }
 
-ul.benefits, ul.features {
+ul.benefits, ul.features, ul.how {
   @include clearfix;
   list-style: none;
   margin-top: $base-spacing*3;
@@ -242,8 +242,7 @@ ul.benefits, ul.features {
   }
 }
 
-ul.features {
-
+ul.how, ul.features {
   li {
     display: table;
 
