@@ -61,6 +61,8 @@ ol {
   @include outer-container;
   @include media($mobile) {
     @include outer-container($mobile-width);
+    padding-left: 22px;
+    padding-right: 22px;
   }
   @include media($medium-screen) {
     @include outer-container($medium-screen-width);
@@ -75,6 +77,10 @@ ol {
     text-align: center;
     font-size: 1.5em;
     line-height: 1.5em;
+    @include media($mobile) {
+      font-size: $base-font-size;
+      text-align: left;
+    }
   }
 }
 
@@ -244,6 +250,10 @@ h1.logo span {
       font-size: $base-font-size;
       p, h1, h2 {
         font-size: $base-font-size;
+      }
+
+      @include media($mobile) {
+        text-align: left;
       }
     }
   }
