@@ -239,6 +239,10 @@ ul.benefits, ul.features, ul.how {
     text-align: center;
     clear: both;
     width: 100%;
+    font-size: $base-font-size;
+    p, h1, h2 {
+      font-size: $base-font-size;
+    }
   }
 }
 
