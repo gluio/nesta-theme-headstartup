@@ -9,6 +9,12 @@ module Nesta
         def facebook_page
           Nesta::Config.fetch("facebook", nil)
         end
+
+        def cta_class
+          classes = []
+          classes << 'join-waitlist' if ENV['WAITLISTED_DOMAIN']
+          classes.join(' ')
+        end
       end
     end
   end
