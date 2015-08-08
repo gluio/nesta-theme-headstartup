@@ -8,7 +8,7 @@ module Nesta
           app.instance_eval do
             post '/sign-up' do
               if params[:email] && params[:email] != ""
-                if ENV["MAILCHIMP_LIST_ID"]
+                if ENV["MAILCHIMP_LIST_ID"] && ENV["MAILCHIMP_API_KEY"]
                   begin
                     @mailchimp = Mailchimp::API.new(ENV["MAILCHIMP_API_KEY"])
                     @mailchimp.lists.subscribe(ENV["MAILCHIMP_LIST_ID"], email: params[:email])
