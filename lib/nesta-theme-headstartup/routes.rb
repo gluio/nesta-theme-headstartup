@@ -1,5 +1,10 @@
 require 'mailchimp'
 require 'waitlisted'
+if ENV["WAITLISTED_DOMAIN"]
+  Waitlisted.configure do |config|
+   config.url = "https://#{ENV["WAITLISTED_DOMAIN"]}"
+  end
+end
 module Nesta
   module Theme
     module Headstartup
