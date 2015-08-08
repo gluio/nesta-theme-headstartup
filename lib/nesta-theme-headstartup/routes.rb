@@ -1,4 +1,5 @@
 require 'mailchimp'
+require 'waitlisted'
 module Nesta
   module Theme
     module Headstartup
@@ -7,14 +8,19 @@ module Nesta
           app.instance_eval do
             post '/sign-up' do
               if params[:email] && params[:email] != ""
-                begin
-                  mailchimp = Mailchimp::API.new(ENV["MAILCHIMP_API_KEY"])
-                  mailchimp.lists.subscribe(ENV["MAILCHIMP_LIST_ID"], email: params[:email])
-                  haml :signup_thanks, layout: :layout
-                rescue Mailchimp::Error => ex
-                  flash[:error] = ex.message
-                  redirect back
+                if ENV["MAILCHIMP_LIST_ID"]
+                  begin
+                    @mailchimp = Mailchimp::API.new(ENV["MAILCHIMP_API_KEY"])
+                    @mailchimp.lists.subscribe(ENV["MAILCHIMP_LIST_ID"], email: params[:email])
+                  rescue Mailchimp::Error => ex
+                    flash[:error] = ex.message
+                    redirect back
+                  end
                 end
+                if ENV["WAITLISTED_DOMAIN"]
+                  @reservation = Waitlisted::Reservation.create(email: params[:email])
+                end
+                haml :signup_thanks, layout: :layout
               else
                 redirect back
               end

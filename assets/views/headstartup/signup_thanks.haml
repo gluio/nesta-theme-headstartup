@@ -1,5 +1,19 @@
 #content
-  %h1 Check your inbox&hellip;
-
-  %p
-    Thank you for signing up, but we're not quite done yet. To make sure we've got the right email address we've sent you an email with a special link in it. It should arrive into your inbox within the next 60 seconds, so please quickly check there and click the link to complete the process.
+  %h1 Thanks for signing up&hellip;
+  - if @reservation
+    - if @mailchimp
+      %p
+        Please check your inbox and click the confirmation link we've sent you to confirm
+        your spot.
+    %p
+      - if @reservation.total < 111
+        Given your position in the list there's an approximately 4 week wait for an invite.
+        You can reduce it to a few days by introducing 3 friends.
+      - else
+        There are a total of
+        = @reservation.total
+        people ahead of you on the list. Jump the queue by introducing 2 friends now.
+  - else
+    - if @mailchimp
+      %p
+        Thank you for signing up, but we're not quite done yet. To make sure we've got the right email address we've sent you an email with a special link in it. It should arrive into your inbox within the next 60 seconds, so please quickly check there and click the link to complete the process.
