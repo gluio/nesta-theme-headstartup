@@ -488,3 +488,21 @@ $code-background: #fcfcfc;
   text-align: right;
 }
 
+.share-reservation {
+  a.icon-facebook-squared, a.icon-twitter {
+    font-size: $base-font-size * 2;
+    text-decoration: none;
+  }
+  a.icon-facebook-squared {
+    color: #3b5998;
+    &:hover {
+      color: lighten(#3b5998, 20%);
+    }
+  }
+  a.icon-twitter {
+    color: #55acee;
+    &:hover {
+      color: lighten(#55acee, 20%);
+    }
+  }
+}
