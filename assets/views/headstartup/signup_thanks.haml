@@ -6,7 +6,7 @@
         Please check your inbox and click the confirmation link we've sent you to confirm
         your spot.
     %p
-      - if @reservation.total < 111
+      - if @reservation.position < 111
         Given your position in the list there's an approximately 4 week wait for an invite.
         You can reduce it to a few days by introducing 3 friends.
       - else
