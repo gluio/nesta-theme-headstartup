@@ -31,7 +31,7 @@ module Nesta
                     redirect back
                   end
                 end
-                haml :signup_thanks, layout: :layout
+                haml :signup_thanks, layout: :bare
               else
                 redirect back
               end
