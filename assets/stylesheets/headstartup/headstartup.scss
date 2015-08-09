@@ -489,8 +489,10 @@ $code-background: #fcfcfc;
 }
 
 .share-reservation {
+  margin: ($base-spacing * 3) 0;
+
   a.icon-facebook-squared, a.icon-twitter {
-    font-size: $base-font-size * 2;
+    font-size: $base-font-size * 3;
     text-decoration: none;
   }
   a.icon-facebook-squared {
