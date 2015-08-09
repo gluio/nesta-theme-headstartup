@@ -6,16 +6,16 @@
         Please check your inbox and click the confirmation link we've sent you to confirm
         your spot.
     - if @reservation.position < 111
-      %p
+      %p.wait-time
         Given your position in the list there's an approximately 4 week wait for an invite.
-      %p
+      %p.position
         %strong You can reduce it to a few days by introducing 3 friends within the next 12 hours.
     - else
-      %p
+      %p.wait-time
         There are a total of
         = @reservation.total
         people ahead of you on the list.
-      %p
+      %p.position
         %strong Jump the queue by introducing 2 friends within the next 12 hours.
     %h2.share-reservation Share the love now&hellip;
     %p.share-reservation
