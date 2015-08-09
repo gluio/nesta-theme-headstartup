@@ -23,7 +23,13 @@ module Nesta
                   end
                 end
                 if ENV["WAITLISTED_DOMAIN"]
-                  @reservation = Waitlisted::Reservation.create(email: params[:email])
+                  begin
+                    @reservation = Waitlisted::Reservation.create(email: params[:email])
+                  rescue StandardError => ex
+                    raise if ex.message != "email has already been taken"
+                    flash[:error] = "You're already on the list!"
+                    redirect back
+                  end
                 end
                 haml :signup_thanks, layout: :layout
               else
