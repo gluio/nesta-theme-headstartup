@@ -1,26 +1,28 @@
-p.wait-time, p.position {
-  font-size: 100%;
-}
-h2.share-reservation {
-  margin: 0;
-}
-p.share-reservation {
-  margin: ($base-spacing * 3) 0;
+body.bare #container #content {
+  p.wait-time, p.position {
+    font-size: 100%;
+  }
+  h2.share-reservation {
+    margin: 0;
+  }
+  p.share-reservation {
+    margin: ($base-spacing * 3) 0;
 
-  a.icon-facebook-squared, a.icon-twitter {
-    font-size: $base-font-size * 3;
-    text-decoration: none;
-  }
-  a.icon-facebook-squared {
-    color: #3b5998;
-    &:hover {
-      color: lighten(#3b5998, 20%);
+    a.icon-facebook-squared, a.icon-twitter {
+      font-size: $base-font-size * 3;
+      text-decoration: none;
     }
-  }
-  a.icon-twitter {
-    color: #55acee;
-    &:hover {
-      color: lighten(#55acee, 20%);
+    a.icon-facebook-squared {
+      color: #3b5998;
+      &:hover {
+        color: lighten(#3b5998, 20%);
+      }
+    }
+    a.icon-twitter {
+      color: #55acee;
+      &:hover {
+        color: lighten(#55acee, 20%);
+      }
     }
   }
 }
