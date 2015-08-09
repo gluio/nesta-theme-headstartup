@@ -104,60 +104,7 @@ ol {
 @import "footer";
 //@import "progress_bar";
 
-body.bare {
-  background-color: $base-background-color;
-
-  #container {
-    color: $base-font-color;
-    display: table;
-    height: 100vh;
-    width: 500px;
-    margin: 0 auto;
-    text-align: center;
-    background-image: none;
-    background-color: $base-background-color;
-
-    #content {
-      margin-top: 0;
-      display: table-cell;
-      vertical-align: middle;
-      width: 100%;
-
-      p {
-        margin: 1em auto;
-      }
-
-      .small {
-        font-size: 75%;
-        p {
-          margin: 0;
-          line-height: 1.4em;
-        }
-      }
-    }
-  }
-  footer#footer {
-    display: none;
-  }
-}
-
-//.browser:nth-child(1) .browser-content {
-//  background: url(/images/dropbox.homepage.png);
-//  background-size: cover;
-//  background-position: 0 0, center
-//}
-//
-//.browser:nth-child(2) .browser-content {
-//  background: url(/images/contentfocus.homepage.png);
-//  background-size: cover;
-//  background-position: 50% 0, center
-//}
-//
-//.browser:nth-child(3) .browser-content {
-//  background: url(/images/heroku.homepage.png);
-//  background-size: cover;
-//  background-position: 25% 0, center
-//}
+@import "bare";
 
 footer.footer {
   clear: both;
@@ -496,23 +443,4 @@ $code-background: #fcfcfc;
   text-align: right;
 }
 
-.share-reservation {
-  margin: ($base-spacing * 3) 0;
-
-  a.icon-facebook-squared, a.icon-twitter {
-    font-size: $base-font-size * 3;
-    text-decoration: none;
-  }
-  a.icon-facebook-squared {
-    color: #3b5998;
-    &:hover {
-      color: lighten(#3b5998, 20%);
-    }
-  }
-  a.icon-twitter {
-    color: #55acee;
-    &:hover {
-      color: lighten(#55acee, 20%);
-    }
-  }
-}
+@import "share_reservation";
