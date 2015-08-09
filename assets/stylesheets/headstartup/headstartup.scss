@@ -488,24 +488,3 @@ $code-background: #fcfcfc;
   text-align: right;
 }
 
-.waitlisted-modal {
-  color: $base-font-color;
-  font-family: $base-font-family !important;
-
-  .waitlisted-name-wrapper {
-    display: none;
-  }
-  .waitlisted-title-wrapper {
-    h4 {
-      font-family: $heading-font-family;
-      font-size: $heading-font-size;
-      line-height: $heading-line-height;
-      letter-spacing: $heading-letter-spacing;
-      font-weight: 700;
-    }
-  }
-  button {
-    background-color: $action-color;
-    color: $base-background-color;
-  }
-}
