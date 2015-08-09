@@ -27,7 +27,7 @@ module Nesta
                     @reservation = Waitlisted::Reservation.create(email: params[:email])
                   rescue StandardError => ex
                     raise if ex.message != "email has already been taken"
-                    flash[:error] = "You're already on the list!"
+                    flash[:success] = "You're already on the list!"
                     redirect back
                   end
                 end

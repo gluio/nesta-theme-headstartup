@@ -1,9 +1,18 @@
+@include keyframes(slide-in) {
+  from { top: -5em; }
+  to { top: 0; }
+}
+
 %flash-base {
   display: block;
   font-weight: bold;
   margin-bottom: $base-spacing / 2;
   padding: $base-spacing / 2;
   text-align: center;
+  position: fixed;
+  width: 100%;
+  top: -5em;
+  @include animation(slide-in 1s $base-timing 2s 1 forwards);
 }
 
 $flashes: (alert: $alert-color, error: $error-color, notice: $notice-color, success: $success-color);
@@ -13,6 +22,7 @@ $flashes: (alert: $alert-color, error: $error-color, notice: $notice-color, succ
     @extend %flash-base;
     background: $color;
     color: darken($color, 60);
+    box-shadow: 0 1px 2px transparentize(darken($color, 60), .7);
 
     a {
       color: darken($color, 70);
