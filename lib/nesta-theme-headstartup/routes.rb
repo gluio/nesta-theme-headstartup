@@ -12,6 +12,7 @@ module Nesta
         def self.included(app)
           app.instance_eval do
             post '/sign-up' do
+              @title = "One more thing..."
               if params[:email] && params[:email] != ""
                 if ENV["MAILCHIMP_LIST_ID"] && ENV["MAILCHIMP_API_KEY"]
                   begin
