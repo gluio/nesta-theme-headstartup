@@ -1,3 +1,4 @@
+require 'uri'
 module Nesta
   module Theme
     module Headstartup
@@ -18,10 +19,11 @@ module Nesta
 
         def waitlisted_affiliate_link(reservation)
           parts = [
-            'https$3A%2F%2F',
+            'https://',
             ENV['WAITLISTED_DOMAIN'],
-            '%2F%3Frefcode%3D',
-            reservation.affiliate].join
+            '/?refcode=',
+            reservation.affiliate]
+          URI.escape(parts.join)
         end
         def waitlisted_twitter_share(reservation, text)
           parts = [
