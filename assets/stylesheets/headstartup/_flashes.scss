@@ -1,7 +1,3 @@
-$flash-red: #FBE3E4;
-$flash-yellow: #FFF6BF;
-$flash-green: #E6EFC2;
-
 %flash-base {
   display: block;
   font-weight: bold;
@@ -10,7 +6,7 @@ $flash-green: #E6EFC2;
   text-align: center;
 }
 
-$flashes: (alert: $flash-yellow, error: $flash-red, notice: lighten($base-accent-color, 40), success: $flash-green);
+$flashes: (alert: $alert-color, error: $error-color, notice: $notice-color, success: $success-color);
 
 @each $flash, $color in $flashes {
   .flash.#{$flash} {
