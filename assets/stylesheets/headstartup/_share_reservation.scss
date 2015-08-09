@@ -6,7 +6,7 @@ body.bare #container #content {
     margin: 0;
   }
   p.share-reservation {
-    margin: ($base-spacing * 3) 0;
+    margin: $base-spacing 0;
 
     a.icon-facebook-squared, a.icon-twitter {
       font-size: $base-font-size * 3;
