@@ -25,21 +25,26 @@ module Nesta
             reservation.affiliate]
           URI.escape(parts.join)
         end
+
         def waitlisted_twitter_share(reservation, text)
           parts = [
             'https://twitter.com/share?url=',
             waitlisted_affiliate_link(reservation),
             '&text=',
-            text].join
+            URI.escape(text)].join
         end
 
         def waitlisted_facebook_share(reservation, text)
           parts = [
-            'https://www.facebook.com/dialog/feed?app_id=660780480720000&display=popup&caption=',
-            text,
+            'https://www.facebook.com/dialog/feed?',
+            'app_id=660780480720000',
+            '&display=popup',
+            '&caption=',
+            URI.escape(text),
             '&link=',
             waitlisted_affiliate_link(reservation),
-            '&redirect_uri=https%3A%2F%2Fcontentfocus.io'].join
+            '&redirect_uri=',
+            URI.escape('https://www.waitlisted.co/social/fb')].join
         end
       end
     end
