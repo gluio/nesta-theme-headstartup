@@ -113,6 +113,7 @@ body.bare {
     background-color: $base-background-color;
 
     #content {
+      margin-top: 0;
       display: table-cell;
       vertical-align: middle;
       width: 100%;
@@ -234,6 +235,8 @@ h1.logo span {
 }
 
 #content {
+  margin-top: 65 + ($base-spacing * 2);
+
   ul.benefits, ul.features, ul.how {
     @include clearfix;
     list-style: none;
