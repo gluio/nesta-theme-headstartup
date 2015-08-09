@@ -5,14 +5,21 @@
       %p
         Please check your inbox and click the confirmation link we've sent you to confirm
         your spot.
-    %p
-      - if @reservation.position < 111
+    - if @reservation.position < 111
+      %p
         Given your position in the list there's an approximately 4 week wait for an invite.
-        You can reduce it to a few days by introducing 3 friends.
-      - else
+      %p
+        %strong You can reduce it to a few days by introducing 3 friends.
+    - else
+      %p
         There are a total of
         = @reservation.total
-        people ahead of you on the list. Jump the queue by introducing 2 friends now.
+        people ahead of you on the list.
+      %p
+        %strong Jump the queue by introducing 2 friends now.
+    %p.share-reservation
+      %a.icon-twitter{ href: waitlisted_twitter_share(@reservation, "Take a look at @ContentFocus, a new highly optimized CMS") }
+      %a.icon-facebook{ href: waitlisted_facebook_share(@reservation, "I've just signed up for ContentFocus, a new highly optimized CMS") }
   - else
     - if @mailchimp
       %p
