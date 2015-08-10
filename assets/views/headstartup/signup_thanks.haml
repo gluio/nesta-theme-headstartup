@@ -1,10 +1,6 @@
 #content
   %h1 Thanks for signing up&hellip;
   - if @reservation
-    - if @mailchimp
-      %p
-        Please check your inbox and click the confirmation link we've sent you to confirm
-        your spot.
     - if @reservation.position < 111
       %p.wait-time
         Given your position in the list there's an approximately 4 week wait for an invite.
