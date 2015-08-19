@@ -217,19 +217,15 @@ h1.logo span {
     }
   }
 
-  ol.how {
+  ol.how, ul.how {
     border-top: 1px solid darken($base-background-color, 8%);
     border-bottom: 1px solid darken($base-background-color, 8%);
   }
 
-  ul.how, ul.features {
+  ol.how, ul.how, ul.features {
     li {
       display: table;
 
-      h2, p {
-        margin-top: 0;
-        margin-bottom: 0.2rem;
-      }
       .description {
         @include span-columns(6);
         float: none;
