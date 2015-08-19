@@ -207,6 +207,8 @@ h1.logo span {
       font-size: $base-font-size;
       p, h1, h2 {
         font-size: $base-font-size;
+        margin-top: 0;
+        margin-bottom: 0;
       }
 
       @include media($mobile) {
