@@ -192,8 +192,8 @@ h1.logo span {
   ul.benefits, ul.features, ul.how {
     @include clearfix;
     list-style: none;
-    margin-top: $base-spacing*3;
-    margin-bottom: $base-spacing*3;
+    margin-top: 0;
+    margin-bottom: $base-spacing;
     padding: 0;
     border-top: 1px solid darken($base-background-color, 8%);
     border-bottom: 1px solid darken($base-background-color, 8%);
