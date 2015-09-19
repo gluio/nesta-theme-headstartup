@@ -75,7 +75,7 @@ $base-duration: 150ms !default;
 $base-timing: ease !default;
 
 // Navigation
-$navigation-background-color: #efefef !default;
+$navigation-background-color: $base-accent-color !default;
 $navigation-color: rgba(255,255,255,0.7) !default;
 
 // Hero
