@@ -248,6 +248,10 @@ h1.logo span {
 
   ul.jobs {
     list-style: none;
+
+    a {
+      text-decoration: none;
+    }
     li {
       @include span-columns(6);
     }
