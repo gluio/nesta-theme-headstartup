@@ -249,7 +249,9 @@ h1.logo span {
     list-style: none;
     li {
       @include span-columns(6);
-      float: left;
+    }
+    li:nth-child(even) {
+      margin-right: 0;
     }
   }
   a.call-to-action {
