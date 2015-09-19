@@ -1,7 +1,7 @@
 .footer {
   $footer-background: $navigation-background-color !default;
   $footer-color: $base-font-color !default;
-  $footer-link-color: transparentize($footer-color, .6) !default;
+  $footer-link-color: $footer-color !default;
   $footer-disclaimer-color: transparentize($footer-color, .6) !default;
 
   background: $footer-background;
