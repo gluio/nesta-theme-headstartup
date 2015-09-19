@@ -244,6 +244,14 @@ h1.logo span {
       }
     }
   }
+
+  ul.jobs {
+    list-style: none;
+    li {
+      @include span-columns(6);
+      float: left;
+    }
+  }
   a.call-to-action {
     @extend %button;
     font-family: $heading-font-family;
