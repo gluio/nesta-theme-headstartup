@@ -101,6 +101,7 @@ header.navigation {
   // The nav items
 
   ul li.nav-link {
+    transition: background-color 0.2s linear;
     background: $navigation-background-color;
     display: block;
     line-height: $navigation-height;
