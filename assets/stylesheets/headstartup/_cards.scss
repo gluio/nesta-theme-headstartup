@@ -14,7 +14,6 @@ ul.jobs {
 
     @include flex-basis(15em);
     @include flex-grow(1);
-    @include transition (all 0.2s ease-in-out);
     border-radius: $base-border-radius;
     border: $card-border;
     cursor: pointer;
@@ -38,7 +37,6 @@ ul.jobs {
     }
 
     h1, h2, h3 {
-      @include transition (all 0.2s ease-in-out);
       border-bottom: $card-border;
       border-radius: $base-border-radius $base-border-radius 0 0;
       font-weight: bold;
