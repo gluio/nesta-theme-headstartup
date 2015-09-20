@@ -250,6 +250,10 @@ h1.logo span {
     a {
       text-decoration: none;
       color: $base-font-color;
+      @include transition (color 0.3s ease-in-out);
+      &:hover {
+        color: $action-color;
+      }
     }
     li {
       @include span-columns(6);
