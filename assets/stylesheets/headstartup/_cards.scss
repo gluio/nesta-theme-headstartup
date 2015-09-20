@@ -63,13 +63,5 @@ ul.jobs {
         opacity: $card-image-hover-opacity;
       }
     }
-
-    &:active {
-      background-color: $card-background;
-
-      .card-header {
-        background-color: $card-background;
-      }
-    }
   }
 }
