@@ -8,6 +8,7 @@
   padding: $base-spacing*2 $gutter;
   margin-top: $base-spacing*2;
   width: 100%;
+  border-top: 1px solid darken($navigation-background-color, 10);
 
   .footer-logo {
     text-align: center;
