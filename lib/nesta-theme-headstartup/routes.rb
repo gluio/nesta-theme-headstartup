@@ -10,6 +10,20 @@ module Nesta
     module Headstartup
       module Routes
         def self.included(app)
+          if ENV['WAITLISTED_DOMAIN']
+            app.instance_eval do
+              get '/waitlist' do
+                @title = "You're almost in..."
+                flash[:success] = <<-EOS
+                  You've received a special referral link that will allow you and your
+                  friend to jump the queue and get early access. Click here to take advantage of
+                  it now.
+                EOS
+                @page = Nesta::Page.find_by_path('/')
+                haml :waitlist
+              end
+            end
+          end
           app.instance_eval do
             post '/sign-up' do
               @title = "One more thing..."

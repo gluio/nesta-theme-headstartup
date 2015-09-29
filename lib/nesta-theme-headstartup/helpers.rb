@@ -19,6 +19,15 @@ module Nesta
 
         def waitlisted_affiliate_link(reservation)
           parts = [
+            "#{request.env['rack.url_scheme']}://",
+            request.env['HTTP_HOST'],
+            '/waitlist?refcode=',
+            reservation.affiliate]
+          URI.escape(parts.join)
+        end
+
+        def waitlisted_signup_page(reservation)
+          parts = [
             'https://',
             ENV['WAITLISTED_DOMAIN'],
             '/?refcode=',
