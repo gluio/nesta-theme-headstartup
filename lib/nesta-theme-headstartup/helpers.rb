@@ -33,13 +33,13 @@ module Nesta
             ENV['WAITLISTED_DOMAIN'],
             '/?refcode=',
             refcode]
-          URI.escape(parts.join)
+          parts.join
         end
 
         def waitlisted_twitter_share(reservation, text)
           parts = [
             'https://twitter.com/share?url=',
-            URI.escape(waitlisted_affiliate_link(reservation)),
+            waitlisted_affiliate_link(reservation),
             '&text=',
             URI.escape(text)].join
         end
@@ -52,7 +52,7 @@ module Nesta
             '&caption=',
             URI.escape(text),
             '&link=',
-            URI.escape(waitlisted_affiliate_link(reservation)),
+            waitlisted_affiliate_link(reservation),
             '&redirect_uri=',
             URI.escape('https://www.waitlisted.co/social/fb')].join
         end
