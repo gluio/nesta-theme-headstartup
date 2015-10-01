@@ -14,7 +14,7 @@ module Nesta
             app.instance_eval do
               get '/waitlist' do
                 @title = "You're almost in..."
-                if ref_link = waitlisted_affiliate_link(param[:refcode])
+                if ref_link = waitlisted_affiliate_link(params[:refcode])
                   flash[:success] = <<-EOS
                     You've received a special referral link that will allow you and your
                     friend to jump the queue and get early access. <a href="#{ref_link}">Click here to take advantage of
