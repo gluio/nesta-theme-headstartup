@@ -12,7 +12,7 @@
   position: fixed;
   width: 100%;
   top: -5em;
-  z-index: 100;
+  z-index: 1000;
   @include animation(slide-in 1s $base-timing 2s 1 forwards);
 }
 
