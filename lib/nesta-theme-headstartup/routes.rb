@@ -27,6 +27,17 @@ module Nesta
             end
           end
           app.instance_eval do
+            before do
+              session[:referral] ||= {}
+              session[:referral][:medium] ||= params['utm_medium']
+              session[:referral][:source] ||= params['utm_source'] || params['ref']
+              session[:referral][:campaign] ||= params['utm_campaign']
+              session[:referral][:term] ||= params['utm_term']
+              session[:referral][:content] ||= params['utm_content']
+              session[:referral][:referring_url] ||= request.referer
+              session[:referral][:entry_url] ||= request.url
+            end
+
             post '/sign-up' do
               @title = "One more thing..."
               if params[:email] && params[:email] != ""

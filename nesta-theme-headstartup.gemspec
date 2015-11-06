@@ -25,4 +25,5 @@ Gem::Specification.new do |spec|
   spec.add_runtime_dependency "bourbon"
   spec.add_runtime_dependency "neat"
   spec.add_runtime_dependency "mailchimp"
+  spec.add_runtime_dependency "sequel_pg"
 end
