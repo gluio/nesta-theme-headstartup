@@ -33,8 +33,11 @@ module Nesta
             end
 
             post '/sign-up' do
-              @title = "One more thing..."
-              @person = Person.create_with_analytics(params[:email], session)
+              begin
+                @title = "One more thing..."
+                @person = Person.create_with_analytics(params[:email], session)
+              rescue Sequel::UniqueConstraintViolation
+              end
               haml :signup_thanks, layout: :bare
             end
           end
