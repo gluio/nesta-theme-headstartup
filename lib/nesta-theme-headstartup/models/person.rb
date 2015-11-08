@@ -6,7 +6,8 @@ if ENV["WAITLISTED_DOMAIN"]
    config.url = "https://#{ENV["WAITLISTED_DOMAIN"]}"
   end
 end
-class Account < Sequel::Model
+class Person < Sequel::Model
+  set_primary_key :uuid
 
   EXTERNAL_SERVICES = [
     :mailchimp,

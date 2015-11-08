@@ -1,4 +1,4 @@
-require 'models/account'
+require 'models/person'
 module Nesta
   module Theme
     module Headstartup
@@ -34,7 +34,7 @@ module Nesta
 
             post '/sign-up' do
               @title = "One more thing..."
-              @account = Account.create_with_analytics(params[:email], session)
+              @person = Person.create_with_analytics(params[:email], session)
               haml :signup_thanks, layout: :bare
             end
           end
