@@ -1,7 +1,7 @@
 require 'mailchimp'
 require 'sequel'
-require 'waitlisted'
 if ENV["WAITLISTED_DOMAIN"]
+  require 'waitlisted'
   Waitlisted.configure do |config|
    config.url = "https://#{ENV["WAITLISTED_DOMAIN"]}"
   end
