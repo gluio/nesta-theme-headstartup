@@ -1,4 +1,6 @@
-require "nesta-theme-headstartup/models/person"
+if ENV["DATABASE_URL"]
+  require "nesta-theme-headstartup/models/person"
+end
 module Nesta
   module Theme
     module Headstartup
