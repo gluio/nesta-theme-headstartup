@@ -1,4 +1,4 @@
-require 'models/person'
+require "nesta-theme-headstartup/models/person"
 module Nesta
   module Theme
     module Headstartup
