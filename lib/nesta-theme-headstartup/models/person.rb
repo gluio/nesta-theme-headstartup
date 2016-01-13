@@ -8,6 +8,10 @@ if ENV["WAITLISTED_DOMAIN"]
 end
 class Person < Sequel::Model
   set_primary_key :uuid
+  set_allowed_columns :email,
+    :referral_medium, :referral_source, :referral_campaign, :referral_term,
+    :referral_content, :referral_referring_url, :referral_entry_url
+
 
   EXTERNAL_SERVICES = [
     :mailchimp,
@@ -19,7 +23,7 @@ class Person < Sequel::Model
     data[:referral].each do |field, value|
       attrs["referral_#{field}".to_sym] = value
     end
-    create(attrs)
+    person = create(attrs)
   end
 
   def after_create
