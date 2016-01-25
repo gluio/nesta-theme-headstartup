@@ -35,8 +35,11 @@ module Nesta
                     if ENV['DATABASE_URL']
                       attrs = Yajl::Parser.parse(request.body.read)
                       if attrs['event'] == 'reservation_activated'
-                        person = Person.find_or_create(email: attrs['reservation_email']) do |pe|
-                        end
+                        person = Person.find_or_create(email: attrs['reservation_email'])
+                        person.referral_source ||= attrs['reservation_referred_by']
+                        person.referral_campaign ||= 'prelaunch'
+                        person.referral_medium ||= 'waitlisted.co'
+                        person.save
                       end
                       'ok'
                     end
