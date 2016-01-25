@@ -33,6 +33,9 @@ module Nesta
                     throw(:halt, [401, "Not authorized\n"])
                   else
                   end
+                else
+                  response['WWW-Authenticate'] = %(Basic realm="API")
+                  throw(:halt, [401, "Not authorized\n"])
                 end
               end
             end
