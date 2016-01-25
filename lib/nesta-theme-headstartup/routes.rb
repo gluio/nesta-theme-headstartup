@@ -22,6 +22,21 @@ module Nesta
               end
             end
           end
+          if ENV['WAITLISTED_API_PASSWORD']
+            app.instance_eval do
+              post '/waitlist' do
+                auth ||=  Rack::Auth::Basic::Request.new(request.env)
+                if auth.provided? && auth.basic? && auth.credentials
+                  user, pass = auth.credentials
+                  unless pass == ENV['WAITLISTED_API_PASSWORD']
+                    response['WWW-Authenticate'] = %(Basic realm="API")
+                    throw(:halt, [401, "Not authorized\n"])
+                  else
+                  end
+                end
+              end
+            end
+          end
           app.instance_eval do
             before do
               session[:referral] ||= {}
