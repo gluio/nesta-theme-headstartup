@@ -32,6 +32,14 @@ module Nesta
                     response['WWW-Authenticate'] = %(Basic realm="API")
                     throw(:halt, [401, "Not authorized\n"])
                   else
+                    if ENV['DATABASE_URL']
+                      attrs = Yajl::Parser.parse(request.body.read)
+                      if attrs['event'] == 'reservation_activated'
+                        person = Person.find_or_create(email: attrs['reservation_email']) do |pe|
+                        end
+                      end
+                      'ok'
+                    end
                   end
                 else
                   response['WWW-Authenticate'] = %(Basic realm="API")
