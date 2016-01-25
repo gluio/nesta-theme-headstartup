@@ -40,6 +40,7 @@ module Nesta
                         person.referral_campaign ||= 'prelaunch'
                         person.referral_medium ||= 'waitlisted.co'
                         person.save
+                        person.activate_waitlist! if person.respond_to?(:activate_waitlist!)
                       end
                       'ok'
                     end
