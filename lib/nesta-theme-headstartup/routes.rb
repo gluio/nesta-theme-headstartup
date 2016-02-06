@@ -62,12 +62,16 @@ module Nesta
               session[:referral][:content] ||= params['utm_content']
               session[:referral][:referring_url] ||= request.referer
               session[:referral][:entry_url] ||= request.url
+              if session[:person_id]
+                @person = Person[uuid: session[:person_id]]
+              end
             end
 
             post '/sign-up' do
               begin
                 @title = "One more thing..."
                 @person = Person.create_with_analytics(params[:email], session)
+                session[:person_id] = @person.uuid
               rescue Sequel::UniqueConstraintViolation
               end
               haml :signup_thanks, layout: :bare
