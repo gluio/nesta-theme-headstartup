@@ -24,7 +24,7 @@ module Nesta
           end
           if ENV['WAITLISTED_API_PASSWORD']
             app.instance_eval do
-              post "/waitlist/#{ENV['WAITLISTED_API_PASSWORD'}" do
+              post "/waitlist/#{ENV['WAITLISTED_API_PASSWORD']}" do
                 if ENV['DATABASE_URL']
                   attrs = Yajl::Parser.parse(request.body.read)
                   if attrs['event'] == 'reservation_activated'
