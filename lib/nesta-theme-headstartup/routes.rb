@@ -26,10 +26,9 @@ module Nesta
             app.instance_eval do
               post "/waitlist/#{ENV['WAITLISTED_API_PASSWORD']}" do
                 if ENV['DATABASE_URL']
-                  attrs = Yajl::Parser.parse(request.body.read)
-                  if attrs['event'] == 'reservation_activated'
-                    person = Person.find_or_create(email: attrs['reservation_email'])
-                    person.referral_source ||= attrs['reservation_referred_by']
+                  if params['event'] == 'reservation_activated'
+                    person = Person.find_or_create(email: params['reservation_email'])
+                    person.referral_source ||= params['reservation_referred_by']
                     person.referral_campaign ||= 'prelaunch'
                     person.referral_medium ||= 'waitlisted.co'
                     person.save
