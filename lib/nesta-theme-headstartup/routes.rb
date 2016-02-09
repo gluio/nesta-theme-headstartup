@@ -24,30 +24,18 @@ module Nesta
           end
           if ENV['WAITLISTED_API_PASSWORD']
             app.instance_eval do
-              post '/waitlist' do
-                auth ||=  Rack::Auth::Basic::Request.new(request.env)
-                if auth.provided? && auth.basic? && auth.credentials
-                  user, pass = auth.credentials
-                  unless pass == ENV['WAITLISTED_API_PASSWORD']
-                    response['WWW-Authenticate'] = %(Basic realm="API")
-                    throw(:halt, [401, "Not authorized\n"])
-                  else
-                    if ENV['DATABASE_URL']
-                      attrs = Yajl::Parser.parse(request.body.read)
-                      if attrs['event'] == 'reservation_activated'
-                        person = Person.find_or_create(email: attrs['reservation_email'])
-                        person.referral_source ||= attrs['reservation_referred_by']
-                        person.referral_campaign ||= 'prelaunch'
-                        person.referral_medium ||= 'waitlisted.co'
-                        person.save
-                        person.activate_waitlist! if person.respond_to?(:activate_waitlist!)
-                      end
-                      'ok'
-                    end
+              post "/waitlist/#{ENV['WAITLISTED_API_PASSWORD'}" do
+                if ENV['DATABASE_URL']
+                  attrs = Yajl::Parser.parse(request.body.read)
+                  if attrs['event'] == 'reservation_activated'
+                    person = Person.find_or_create(email: attrs['reservation_email'])
+                    person.referral_source ||= attrs['reservation_referred_by']
+                    person.referral_campaign ||= 'prelaunch'
+                    person.referral_medium ||= 'waitlisted.co'
+                    person.save
+                    person.activate_waitlist! if person.respond_to?(:activate_waitlist!)
                   end
-                else
-                  response['WWW-Authenticate'] = %(Basic realm="API")
-                  throw(:halt, [401, "Not authorized\n"])
+                  'ok'
                 end
               end
             end
