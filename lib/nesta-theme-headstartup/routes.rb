@@ -25,11 +25,9 @@ module Nesta
           if ENV['WAITLISTED_API_PASSWORD']
             app.instance_eval do
               post "/waitlist/#{ENV['WAITLISTED_API_PASSWORD']}" do
-                puts params.inspect
-                puts request.body.read.inspect
                 if ENV['DATABASE_URL']
                   if params['event'] == 'reservation_activated'
-                    person = Person.find_or_create(email: params['reservation_email'])
+                    person = Person.find_or_create(email: params['reservation']['email'])
                     person.referral_source ||= params['reservation_referred_by']
                     person.referral_campaign ||= 'prelaunch'
                     person.referral_medium ||= 'waitlisted.co'
