@@ -8,7 +8,8 @@ if ENV["WAITLISTED_DOMAIN"]
 end
 class Person < Sequel::Model
   set_primary_key :uuid
-  set_columns :email,
+  plugin :whitelist_security
+  set_allowed_columns :email,
     :referral_medium, :referral_source, :referral_campaign, :referral_term,
     :referral_content, :referral_referring_url, :referral_entry_url
 
