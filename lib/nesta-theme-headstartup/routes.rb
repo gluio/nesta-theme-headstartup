@@ -6,39 +6,6 @@ module Nesta
     module Headstartup
       module Routes
         def self.included(app)
-          if ENV['WAITLISTED_DOMAIN']
-            app.instance_eval do
-              get '/waitlist' do
-                @title = "You're almost in..."
-                if ref_link = waitlisted_signup_page(params[:refcode])
-                  flash.now[:success] = <<-EOS
-                    You've received a special referral link that will allow you and your
-                    friend to jump the queue and get early access.<br/>
-                    <a href="#{ref_link}">Click here to take advantage of it now</a>.
-                  EOS
-                end
-                @page = Nesta::Page.find_by_path('/')
-                haml :hero
-              end
-            end
-          end
-          if ENV['WAITLISTED_API_PASSWORD']
-            app.instance_eval do
-              post "/waitlist/#{ENV['WAITLISTED_API_PASSWORD']}" do
-                if ENV['DATABASE_URL']
-                  if params['event'] == 'reservation_activated'
-                    person = Person.find_or_create(email: params['reservation']['email'])
-                    person.referral_source ||= params['reservation_referred_by']
-                    person.referral_campaign ||= 'prelaunch'
-                    person.referral_medium ||= 'waitlisted.co'
-                    person.save
-                    person.activate_waitlist! if person.respond_to?(:activate_waitlist!)
-                  end
-                  'ok'
-                end
-              end
-            end
-          end
           app.instance_eval do
             before do
               session[:referral] ||= {}

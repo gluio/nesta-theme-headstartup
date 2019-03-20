@@ -1,11 +1,5 @@
 require 'mailchimp'
 require 'sequel'
-if ENV["WAITLISTED_DOMAIN"]
-  require 'waitlisted'
-  Waitlisted.configure do |config|
-   config.url = "https://#{ENV["WAITLISTED_DOMAIN"]}"
-  end
-end
 class Person < Sequel::Model
   set_primary_key :uuid
   plugin :whitelist_security
@@ -15,8 +9,7 @@ class Person < Sequel::Model
 
 
   EXTERNAL_SERVICES = [
-    :mailchimp,
-    :waitlisted
+    :mailchimp
   ]
 
   def self.create_with_analytics(email, data)
@@ -41,10 +34,5 @@ class Person < Sequel::Model
     return unless ENV['MAILCHIMP_LIST_ID'] && ENV['MAILCHIMP_API_KEY']
     mailchimp = Mailchimp::API.new(ENV['MAILCHIMP_API_KEY'])
     mailchimp.lists.subscribe(ENV['MAILCHIMP_LIST_ID'], email: email)
-  end
-
-  def waitlisted_sync
-    return unless ENV['WAITLISTED_DOMAIN']
-    Waitlisted::Reservation.create(email: email)
   end
 end
